@@ -5,15 +5,15 @@
 #include "fish.hpp"
 
 int main() {
-  auto aquarium = std::make_unique<Aquarium>();
+  Aquarium aquarium;
 
-  aquarium->add_entity(std::make_unique<Fish>("Nemo", Fish::Male));
+  aquarium.add_entity(std::make_unique<Fish>("Nemo", Fish::Male));
 
-  assert(aquarium->count_seaweed() == 0);
+  assert(aquarium.count_seaweed() == 0);
   for(std::size_t i {0}; i < 4; ++i)
-    aquarium->add_entity(std::make_unique<Seaweed>());
-  assert(aquarium->count_seaweed() == 4);
+    aquarium.add_entity(std::make_unique<Seaweed>());
+  assert(aquarium.count_seaweed() == 4);
 
-  aquarium->action();
+  aquarium.action();
   return 0;
 }
