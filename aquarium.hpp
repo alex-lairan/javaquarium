@@ -11,11 +11,10 @@
 class Aquarium : public boost::noncopyable {
 public:
   Aquarium();
-  ~Aquarium();
 
   void add_entity(std::unique_ptr<Entity> entity);
 
-  std::size_t count_seaweed();
+  std::size_t count_seaweed() const;
 
   void action();
 

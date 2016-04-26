@@ -10,9 +10,6 @@ bool isInstanceOf(const SrcType* src) {
 Aquarium::Aquarium() {
 }
 
-Aquarium::~Aquarium() {
-}
-
 void Aquarium::add_entity(std::unique_ptr<Entity> entity) {
   _entities.push_back(std::move(entity));
 }
@@ -25,7 +22,7 @@ void Aquarium::action() {
   }
 }
 
-std::size_t Aquarium::count_seaweed() {
+std::size_t Aquarium::count_seaweed() const {
   std::size_t i = 0;
   for(auto& entity : _entities) {
     if(isInstanceOf<Seaweed>(entity.get())) {

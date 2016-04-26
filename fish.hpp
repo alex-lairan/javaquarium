@@ -12,7 +12,7 @@ public:
   };
 public:
   Fish(std::string, Fish::Sex);
-  ~Fish();
+
   void action();
   void status();
 
@@ -21,7 +21,7 @@ private:
   Fish::Sex   _sex;
 
 private:
-  std::string prettify(Fish::Sex);
+  std::string prettify(const Fish::Sex&);
 };
 
 #endif /* __FISH_HPP__ */

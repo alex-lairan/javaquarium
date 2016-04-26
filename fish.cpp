@@ -6,9 +6,6 @@ Fish::Fish(std::string name, Fish::Sex sex) :
   _sex{sex} {
 }
 
-Fish::~Fish() {
-}
-
 void Fish::action() {
 }
 
@@ -17,11 +14,13 @@ void Fish::status() {
   std::cout << "Sexe: " << prettify(_sex) << std::endl;
 }
 
-std::string Fish::prettify(Fish::Sex sex) {
+std::string Fish::prettify(const Fish::Sex& sex) {
   switch (sex) {
     case Fish::Male:
       return "male";
     case Fish::Female:
       return "female";
+    default:
+      return "undefined";
   }
 }
