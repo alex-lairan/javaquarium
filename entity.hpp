@@ -6,6 +6,7 @@
 class Entity : public boost::noncopyable {
 public:
   virtual void action() = 0;
+  virtual void status() = 0;
 };
 
 #endif /* __ENTITY_HPP__ */

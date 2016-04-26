@@ -7,6 +7,7 @@ class Seaweed : public Entity {
 public:
   Seaweed();
   void action();
+  void status();
 };
 
 #endif /* __SEAWEED_HPP__ */

@@ -13,7 +13,7 @@ public:
   Aquarium();
   ~Aquarium();
 
-  void add_entity(Entity &entity);
+  void add_entity(std::unique_ptr<Entity> entity);
 
   std::size_t count_seaweed();
 
