@@ -3,8 +3,8 @@
 #include "fish.hpp"
 
 int main() {
-  auto aquarium = std::make_unique<Aquarium()>;
-  auto fish     = std::make_unique<Fish("Nemo")>;
+  auto aquarium = std::make_unique<Aquarium>();
+  auto fish     = std::make_unique<Fish>("Nemo");
 
   aquarium.add_entity(std::move(fish));
 
