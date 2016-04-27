@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include <boost/noncopyable.hpp>
 #include "entity.hpp"
 #include "fish.hpp"
 #include "seaweed.hpp"
@@ -19,7 +20,7 @@ public:
   void action();
 
 private:
-  std::vector<std::unique_ptr<Entity>> _entities;
+  std::vector<std::unique_ptr<Entity>> m_entities;
 };
 
 #endif /* __AQUARIUM_HPP__ */

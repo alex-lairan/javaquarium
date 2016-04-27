@@ -2,25 +2,35 @@
 #include "fish.hpp"
 
 Fish::Fish(std::string name, Fish::Sex sex) :
-  _name{name},
-  _sex{sex} {
+  m_name{name},
+  m_sex{sex} {
 }
 
 void Fish::action() {
 }
 
 void Fish::status() {
-  std::cout << "Nom: " << _name << std::endl;
-  std::cout << "Sexe: " << prettify(_sex) << std::endl;
+  std::cout << "Nom: " << m_name << std::endl;
+  std::string sex;
+  try {
+    sex = prettify(m_sex);
+  }
+  catch(UndefinedSex e) {
+    sex = "undefined";
+  }
+  std::cout << "Sexe: " << sex << std::endl;
 }
 
-std::string Fish::prettify(const Fish::Sex& sex) {
+std::string Fish::prettify(Fish::Sex sex) throw(UndefinedSex) {
   switch (sex) {
     case Fish::Male:
       return "male";
     case Fish::Female:
       return "female";
-    default:
-      return "undefined";
   }
+  throw UndefinedSex();
+}
+
+Entity::Kind Fish::kind() {
+  return Entity::Fish;
 }
