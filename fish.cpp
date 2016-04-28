@@ -1,9 +1,13 @@
 #include <iostream>
+#include <array>
 #include "fish.hpp"
 
 Fish::Fish(std::string name, Fish::Sex sex) :
   m_name{name},
   m_sex{sex} {
+    if(m_sex >= Fish::MAX) {
+      throw(UndefinedSex());
+    }
 }
 
 void Fish::action() {
@@ -11,24 +15,16 @@ void Fish::action() {
 
 void Fish::status() {
   std::cout << "Nom: " << m_name << std::endl;
-  std::string sex;
-  try {
-    sex = prettify(m_sex);
-  }
-  catch(UndefinedSex e) {
-    sex = "undefined";
-  }
-  std::cout << "Sexe: " << sex << std::endl;
+
+  std::cout << "Sexe: " << sex() << std::endl;
 }
 
-std::string Fish::prettify(Fish::Sex sex) throw(UndefinedSex) {
-  switch (sex) {
-    case Fish::Male:
-      return "male";
-    case Fish::Female:
-      return "female";
-  }
-  throw UndefinedSex();
+const std::string &Fish::sex() {
+  static std::array<std::string, Fish::MAX> const names {
+    "male",
+    "female"
+  };
+  return names.at(m_sex);
 }
 
 Entity::Kind Fish::kind() {

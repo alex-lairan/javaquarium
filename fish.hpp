@@ -10,20 +10,19 @@ public:
 public:
   enum Sex {
     Male,
-    Female
+    Female,
+    MAX
   };
 public:
   Fish(std::string, Fish::Sex);
 
-  void         action();
-  void         status();
-  Entity::Kind kind();
+  void               action();
+  void               status();
+  Entity::Kind       kind();
+  const std::string &sex();
 private:
   std::string m_name;
   Fish::Sex   m_sex;
-
-private:
-  std::string prettify(Fish::Sex) throw(UndefinedSex);
 };
 
 #endif /* __FISH_HPP__ */
