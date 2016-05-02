@@ -1,1 +1,1 @@
-g++-5 -Wall -std=c++14 main.cpp seaweed.cpp fish.cpp aquarium.cpp
+g++-5 -Wall -Wpedantic -std=c++14 main.cpp seaweed.cpp fish.cpp aquarium.cpp herbivorous_fish.cpp carnivorous_fish.cpp
