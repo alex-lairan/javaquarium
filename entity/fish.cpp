@@ -10,6 +10,9 @@ Fish::Fish(std::string name, Fish::Sex sex) :
     if(m_sex >= Fish::MAX_SEX) {
       throw(UndefinedSex());
     }
+    if(m_species >= Fish::MAX_SPECIES) {
+      throw(UndefinedSpecies());
+    }
 }
 
 void Fish::action() {

@@ -5,9 +5,8 @@
 #include <vector>
 #include <memory>
 #include <boost/noncopyable.hpp>
-#include "entity.hpp"
-#include "fish.hpp"
-#include "seaweed.hpp"
+
+#include "entity/entity.hpp"
 
 class Aquarium : public boost::noncopyable {
 public:

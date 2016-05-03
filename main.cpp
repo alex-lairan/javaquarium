@@ -1,8 +1,10 @@
 #include <iostream>
 #include <memory>
 #include <cassert>
+
+#include "entity/herbivorous_fish.hpp"
+#include "entity/seaweed.hpp"
 #include "aquarium.hpp"
-#include "herbivorous_fish.hpp"
 
 std::unique_ptr<HerbivorousFish> make_fish(std::string name, Fish::Sex sex,
                                            Fish::Species species) {
